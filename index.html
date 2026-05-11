@@ -1939,7 +1939,13 @@
     </div>
 
     <div class="contact-img-wrap fade-up delay-2" style="background:var(--dark);display:flex;align-items:center;justify-content:center;">
-      <img src="brand_assets/dmclogo.jpg" alt="DMC Gardening &amp; Maintenance" style="width:260px;height:260px;border-radius:50%;object-fit:cover;border:6px solid rgba(107,191,62,0.35);box-shadow:0 0 80px rgba(107,191,62,0.15);">
+      <img src="brand_assets/dmclogo.jpg" alt="DMC Gardening &amp; Maintenance" style="width:260px;height:260px;border-radius:50%;object-fit:cover;border:6px solid rgba(107,191,62,0.35);box-shadow:0 0 80px rgba(107,191,62,0.15);animation:logoPulse 3.5s ease-in-out infinite;">
+      <style>
+        @keyframes logoPulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.06); }
+        }
+      </style>
     </div>
 
   </div>
