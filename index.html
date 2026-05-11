@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMC Gardening &amp; Maintenance | Belfast &amp; Lisburn</title>
+  <meta name="description" content="Professional gardening and maintenance services across Belfast, Lisburn and surrounding areas. Over 20 years experience. Grass cutting, hedge trimming, garden clearance and more.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Satisfy&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #1B3A2D;
+      --mid: #2D6A4F;
+      --bright: #6BBF3E;
+      --orange: #E87722;
+      --cream: #F7F4EF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+    /* ─── HEADER ─── */
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.25);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(107,191,62,0.35);
+    }
+
+    .logo-text-main {
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      line-height: 1.2;
+    }
+
+    .logo-text-sub {
+      color: var(--bright);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      position: relative;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      padding-bottom: 3px;
+      transition: color 0.2s;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--orange);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover { color: white; }
+    .nav-link:hover::after { width: 100%; }
+
+    .nav-phone {
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-phone:hover { color: #f09040; }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      padding: 11px 26px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #d46618;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(232,119,34,0.4);
+    }
+
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.75);
+      color: white;
+      padding: 11px 26px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: white;
+      transform: translateY(-2px);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      padding: 4px;
+    }
+
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #142e22;
+      padding: 0.75rem 1.5rem 1.25rem;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    #mobile-menu.open { display: flex; }
+
+    .mob-link {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: color 0.2s;
+    }
+
+    .mob-link:hover { color: var(--bright); }
+    .mob-link.orange { color: var(--orange); font-weight: 700; border-bottom: none; padding-top: 1rem; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('brand_assets/dmcgarden.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+
+    .hero-bg.loaded { transform: scale(1); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(27,58,45,0.88) 0%,
+        rgba(27,58,45,0.65) 50%,
+        rgba(27,58,45,0.45) 100%
+      );
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 7rem 1.5rem 5rem;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bright);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--orange);
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.35rem;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero-script {
+      font-family: 'Satisfy', cursive;
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      color: var(--bright);
+      margin-bottom: 1.75rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      line-height: 1.3;
+    }
+
+    .hero-desc {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 530px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      margin-top: 4.5rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      padding-right: 2.5rem;
+      margin-right: 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .stat-item:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--bright);
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      margin-top: 5px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: scrollBounce 2.2s ease-in-out infinite;
+    }
+
+    .scroll-hint span {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── HERO ENTRANCE ANIMATIONS ─── */
+    @keyframes heroSlideUp {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroSlideLeft {
+      from { opacity: 0; transform: translateX(-28px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes heroReveal {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes heroBgIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .hero-overlay,
+    .hero-grain {
+      animation: heroBgIn 1.4s ease 0s both;
+    }
+
+    .hero-eyebrow {
+      animation: heroSlideLeft 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+    }
+
+    .hero-h1 {
+      animation: heroSlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+    }
+
+    .hero-script {
+      animation: heroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+    }
+
+    .hero-desc {
+      animation: heroSlideUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
+    }
+
+    .hero-ctas {
+      animation: heroSlideUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.95s both;
+    }
+
+    .hero-stats {
+      animation: heroSlideUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+    }
+
+    .scroll-hint {
+      animation: scrollBounce 2.2s ease-in-out 2.2s infinite, heroBgIn 0.8s ease 2s both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-overlay, .hero-grain, .hero-eyebrow, .hero-h1,
+      .hero-script, .hero-desc, .hero-ctas, .hero-stats, .scroll-hint {
+        animation: none;
+      }
+    }
+
+    /* ─── SECTION SHARED ─── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--orange);
+    }
+
+    .divider {
+      width: 56px;
+      height: 3px;
+      background: var(--orange);
+      margin: 0.875rem 0 0;
+    }
+
+    .divider.center { margin: 0.875rem auto 0; }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: var(--dark);
+      padding: 5.5rem 1.5rem;
+    }
+
+    .services-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .services-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      cursor: default;
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, background 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 0 1px rgba(107,191,62,0.15);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(107,191,62,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      border: 2px solid rgba(107,191,62,0.25);
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(107,191,62,0.2);
+      border-color: rgba(107,191,62,0.5);
+    }
+
+    .service-card h3 {
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.855rem;
+      line-height: 1.65;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--cream);
+      padding: 6rem 1.5rem;
+    }
+
+    .about-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .check-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+
+    .check-item { display: flex; align-items: flex-start; gap: 0.875rem; }
+
+    .check-icon {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      background: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .check-title { font-weight: 700; color: var(--dark); font-size: 0.95rem; margin-bottom: 2px; }
+
+    .check-desc { color: #6b7280; font-size: 0.875rem; line-height: 1.55; }
+
+    .quote-strip {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--dark);
+      border-radius: 10px;
+      margin-bottom: 1.75rem;
+    }
+
+    .about-imgs { position: relative; }
+
+    .about-img-main {
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img-main img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .about-img-main:hover img { transform: scale(1.04); }
+
+    .about-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27,58,45,0.45) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .years-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: var(--orange);
+      color: white;
+      padding: 1.1rem 1.4rem;
+      border-radius: 10px;
+      box-shadow: 0 12px 28px rgba(232,119,34,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
+      text-align: center;
+      z-index: 3;
+    }
+
+    .years-badge .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .years-badge .lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    .about-img-second {
+      margin-top: 1rem;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .about-img-second img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .about-img-second:hover img { transform: scale(1.04); }
+
+    /* ─── AREAS BANNER ─── */
+    .areas-banner {
+      background: var(--orange);
+      padding: 1.5rem 1.5rem;
+    }
+
+    .areas-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .areas-text { display: flex; align-items: center; gap: 0.875rem; flex-wrap: wrap; }
+
+    .areas-btn {
+      background: white;
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .areas-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+
+    /* ─── GALLERY ─── */
+    #gallery {
+      background: white;
+      padding: 6rem 1.5rem;
+    }
+
+    .gallery-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .gallery-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 270px 270px;
+      gap: 0.875rem;
+    }
+
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item.tall { grid-row: 1 / 3; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(27,58,45,0.85) 0%, transparent 100%);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 2.5rem 1rem 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .caption { opacity: 1; }
+
+    /* ─── REVIEWS ─── */
+    #reviews {
+      background: var(--cream);
+      padding: 6rem 1.5rem;
+    }
+
+    .reviews-header { text-align: center; margin-bottom: 3rem; }
+
+    .rating-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      padding: 0.875rem 1.75rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin-top: 1.5rem;
+    }
+
+    .rating-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .stars { color: #F59E0B; font-size: 1.1rem; line-height: 1; }
+
+    .rating-meta { color: #9ca3af; font-size: 0.78rem; margin-top: 3px; }
+
+    .reviews-grid {
+      max-width: 1280px;
+      margin: 3rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.055);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(27,58,45,0.1);
+    }
+
+    .review-stars { color: #F59E0B; font-size: 0.9rem; margin-bottom: 0.875rem; }
+
+    .review-text {
+      color: #374151;
+      font-size: 0.875rem;
+      line-height: 1.72;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .review-author { display: flex; align-items: center; gap: 0.75rem; }
+
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      background: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    .author-name { font-weight: 700; color: var(--dark); font-size: 0.875rem; }
+
+    .author-source { color: #9ca3af; font-size: 0.72rem; margin-top: 1px; }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner {
+      background: var(--dark);
+      padding: 5.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('brand_assets/dmcnicegrass.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: white;
+      padding: 6rem 1.5rem;
+    }
+
+    .contact-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .contact-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      min-height: 480px;
+    }
+
+    .contact-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .contact-img-wrap:hover img { transform: scale(1.03); }
+
+    .contact-img-wrap:not(.no-overlay)::after {
+      content: none;
+    }
+
+    .contact-info-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-info-item:hover {
+      border-color: var(--dark);
+      box-shadow: 0 4px 16px rgba(27,58,45,0.08);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--dark);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon.green { background: #25D366; }
+    .contact-icon.blue { background: #1877F2; }
+    .contact-icon.instagram { background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888); }
+
+    .fb-card {
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .fb-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(24,119,242,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .fb-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .fb-card-icon {
+      width: 56px; height: 56px;
+      background: #1877F2;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .fb-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+    }
+    .fb-card-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 3px;
+    }
+    .fb-card-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      border-left: 3px solid #1877F2;
+      padding-left: 1rem;
+    }
+    .fb-card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .fb-stat {
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .fb-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1877F2;
+      line-height: 1;
+    }
+    .fb-stat-lbl {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+    .fb-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #1877F2;
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .fb-cta:hover {
+      background: #1464d8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(24,119,242,0.4);
+    }
+    .fb-cta:active { transform: translateY(0); }
+
+    .contact-label { font-size: 0.72rem; color: #9ca3af; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .contact-value { font-weight: 700; color: var(--dark); font-size: 0.95rem; }
+
+    .form-wrap {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 7px;
+      font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      background: white;
+      color: #1a1a1a;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--dark);
+      box-shadow: 0 0 0 3px rgba(27,58,45,0.08);
+    }
+
+    textarea { resize: vertical; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 4.5rem 1.5rem 2rem;
+    }
+
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-heading {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--bright);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links { display: flex; flex-direction: column; gap: 0.65rem; list-style: none; }
+
+    .footer-links a, .footer-links li {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .social-row { display: flex; gap: 0.6rem; margin-top: 1.25rem; }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .social-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1023px) {
+      .desktop-nav, .nav-phone, .nav-cta { display: none !important; }
+      .hamburger { display: flex !important; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: 220px 220px 220px; }
+      .gallery-item.tall { grid-row: 1 / 2; }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-item { height: 220px; }
+      .gallery-item.tall { grid-row: auto; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 1.25rem; }
+      .stat-item { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.25rem; }
+      .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .years-badge { left: 1rem; bottom: 1rem; }
+    }
+
+    /* ─── BEFORE / AFTER SLIDERS ─── */
+    #transformations {
+      background: var(--dark);
+      padding: 6rem 1.5rem;
+    }
+    .ba-header { text-align: center; margin-bottom: 3.5rem; }
+    .ba-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    .ba-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      cursor: col-resize;
+      user-select: none;
+      -webkit-user-select: none;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
+    }
+    .ba-item:hover {
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      transform: translateY(-3px);
+    }
+    .ba-before, .ba-after {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    .ba-after { z-index: 2; }
+    .ba-divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: white;
+      z-index: 10;
+      pointer-events: none;
+      transform: translateX(-50%);
+      box-shadow: 0 0 16px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.3);
+    }
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px; height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      gap: 2px;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+    }
+    .ba-item:hover .ba-handle {
+      transform: translate(-50%,-50%) scale(1.12);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    }
+    .ba-item.dragging .ba-handle {
+      transform: translate(-50%,-50%) scale(1.2);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.5);
+    }
+    .ba-label {
+      position: absolute;
+      top: 1rem;
+      z-index: 11;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+    .ba-label.before-lbl { left: 1rem; }
+    .ba-label.after-lbl {
+      right: 1rem;
+      background: rgba(27,58,45,0.75);
+      color: var(--bright);
+    }
+    .ba-drag-hint {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 11;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      transition: opacity 0.4s ease;
+    }
+    .ba-item.dragging .ba-drag-hint,
+    .ba-item.interacted .ba-drag-hint { opacity: 0; }
+    .ba-drag-hint svg { animation: arrowPulse 1.4s ease-in-out infinite; }
+    @keyframes arrowPulse {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(3px); }
+    }
+
+    /* ─── MICRO INTERACTIONS ─── */
+
+    /* Ripple */
+    .ripple-btn { position: relative; overflow: hidden; }
+    .ripple-btn .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      transform: scale(0);
+      animation: rippleAnim 0.55s linear;
+      pointer-events: none;
+    }
+    @keyframes rippleAnim {
+      to { transform: scale(4); opacity: 0; }
+    }
+
+    /* Button shine sweep */
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.45s ease;
+    }
+    .btn-primary { position: relative; overflow: hidden; }
+    .btn-primary:hover::after { left: 150%; }
+
+    /* Service icon spin on hover */
+    .service-card:hover .service-icon svg {
+      animation: iconSpin 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes iconSpin {
+      from { transform: rotate(-15deg) scale(0.85); }
+      to { transform: rotate(0) scale(1); }
+    }
+
+    /* Review card tilt — handled via JS inline transform */
+    .review-card { transform-style: preserve-3d; will-change: transform; }
+
+    /* Nav active indicator */
+    .nav-link.active { color: white; }
+    .nav-link.active::after { width: 100%; }
+
+    /* Logo pulse on hover */
+    .logo-img {
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+    }
+    .logo-wrap:hover .logo-img {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 3px rgba(107,191,62,0.4), 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Phone number ring animation */
+    @keyframes phoneRing {
+      0%, 100% { transform: rotate(0); }
+      10% { transform: rotate(-12deg); }
+      20% { transform: rotate(12deg); }
+      30% { transform: rotate(-8deg); }
+      40% { transform: rotate(8deg); }
+      50% { transform: rotate(0); }
+    }
+    .nav-phone:hover svg { animation: phoneRing 0.6s ease; }
+
+    /* Check item stagger */
+    .check-item { transition: transform 0.25s ease; }
+    .check-item:hover { transform: translateX(4px); }
+    .check-icon { transition: background 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+    .check-item:hover .check-icon { background: var(--orange); transform: scale(1.15); }
+
+    /* Gallery caption slide */
+    .gallery-item .caption {
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .gallery-item:hover .caption { opacity: 1; transform: translateY(0); }
+
+    /* Contact info item icon glow */
+    .contact-info-item:hover .contact-icon {
+      box-shadow: 0 0 0 4px rgba(27,58,45,0.15);
+      transform: scale(1.05);
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+    }
+    .contact-icon { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+
+    /* Stats counter glow */
+    .stat-num {
+      transition: color 0.3s ease;
+      text-shadow: 0 0 0 transparent;
+    }
+    .stat-item.counted .stat-num { text-shadow: 0 0 30px rgba(107,191,62,0.4); }
+
+    /* Section heading reveal underline */
+    .section-heading-wrap { display: inline-block; position: relative; }
+
+    /* Areas banner scroll marquee hint */
+    .areas-inner { transition: transform 0.2s ease; }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--bright), var(--orange));
+      z-index: 200;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fade-up { opacity: 0; }
+    .fade-up.visible {
+      animation: fadeUp 0.65s ease forwards;
+    }
+    .fade-up.delay-1.visible { animation-delay: 0.1s; }
+    .fade-up.delay-2.visible { animation-delay: 0.22s; }
+    .fade-up.delay-3.visible { animation-delay: 0.34s; }
+    .fade-up.delay-4.visible { animation-delay: 0.46s; }
+
+    @media (max-width: 768px) {
+      .ba-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="nav-inner">
+    <a href="#" class="logo-wrap">
+      <img src="brand_assets/dmclogo.jpg" alt="DMC Gardening logo" class="logo-img">
+      <div>
+        <div class="logo-text-main">DMC Gardening</div>
+        <div class="logo-text-sub">&amp; Maintenance</div>
+      </div>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#services" class="nav-link" data-section="services">Services</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#transformations" class="nav-link" data-section="transformations">Results</a>
+      <a href="#gallery" class="nav-link" data-section="gallery">Gallery</a>
+      <a href="#reviews" class="nav-link" data-section="reviews">Reviews</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:1.25rem;">
+      <a href="tel:+447708379804" class="nav-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +44 7708 379804
+      </a>
+      <a href="#contact" class="btn-primary nav-cta">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleNav()">
+        <svg id="ham-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu">
+    <a href="#services" class="mob-link" onclick="toggleNav()">Services</a>
+    <a href="#about" class="mob-link" onclick="toggleNav()">About</a>
+    <a href="#transformations" class="mob-link" onclick="toggleNav()">Before &amp; After</a>
+    <a href="#gallery" class="mob-link" onclick="toggleNav()">Gallery</a>
+    <a href="#reviews" class="mob-link" onclick="toggleNav()">Reviews</a>
+    <a href="#contact" class="mob-link" onclick="toggleNav()">Contact</a>
+    <a href="tel:+447708379804" class="mob-link orange">📞 +44 7708 379804</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Professional Gardening · Belfast &amp; Lisburn</p>
+    <h1 class="hero-h1">We Create<br>Beautiful Outdoor<br>Spaces You Can</h1>
+    <div class="hero-script">Enjoy all year round</div>
+    <p class="hero-desc">With over 20 years of experience, DMC Gardening &amp; Maintenance delivers reliable, professional garden care for homes and businesses across Belfast, Lisburn and the surrounding areas.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary ripple-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Get a Free Quote
+      </a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5.0 ★</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Recommend Rate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div style="max-width:1280px;margin:0 auto 0;">
+    <div class="services-header">
+      <div class="section-label" style="justify-content:center;">What We Do</div>
+      <h2 style="color:white;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:-0.02em;margin-bottom:0;">Our Garden Services</h2>
+      <div class="divider center"></div>
+    </div>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card fade-up">
+      <div class="service-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6BBF3E" stroke-width="1.6">
+          <path d="M3 20s2-2 7-2 7 2 7 2M10 16c-3 0-6-3-6-8 0 0 3 1 6 1s6-1 6-1c0 5-3 8-6 8z"/>
+          <path d="M10 16V20"/>
+        </svg>
+      </div>
+      <h3>Grass Cutting<br>&amp; Lawn Care</h3>
+      <p>Regular mowing, striping, edging, and treatment to keep your lawn looking its absolute best all year round.</p>
+    </div>
+
+    <div class="service-card fade-up delay-1">
+      <div class="service-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6BBF3E" stroke-width="1.6">
+          <path d="M6.5 6.5c0 0 1 8 5.5 8s5.5-8 5.5-8M12 14.5V20M8 20h8"/>
+        </svg>
+      </div>
+      <h3>Hedge Cutting<br>&amp; Pruning</h3>
+      <p>Precision cutting and shaping of hedges, shrubs, conifers, and trees to keep your boundaries clean and tidy.</p>
+    </div>
+
+    <div class="service-card fade-up delay-2">
+      <div class="service-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6BBF3E" stroke-width="1.6">
+          <path d="M3 6h18M3 12h18M3 18h18M8 3v3M12 3v3M16 3v3M8 18v3M12 18v3M16 18v3"/>
+        </svg>
+      </div>
+      <h3>Garden Clearance<br>&amp; Maintenance</h3>
+      <p>Full garden clearances, weeding, planting, and ongoing maintenance to transform overgrown or neglected gardens.</p>
+    </div>
+
+    <div class="service-card fade-up delay-3">
+      <div class="service-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6BBF3E" stroke-width="1.6">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+      <h3>Domestic<br>&amp; Commercial</h3>
+      <p>From small private gardens to large commercial sites — we bring the same professionalism to every property.</p>
+    </div>
+
+    <div class="service-card fade-up delay-4">
+      <div class="service-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6BBF3E" stroke-width="1.6">
+          <path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <h3>Fencing<br>&amp; Landscaping</h3>
+      <p>Installation and repair of fencing, paving, and landscaping features to enhance and define your outdoor space.</p>
+    </div>
+
+    <div class="service-card fade-up delay-4">
+      <div class="service-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6BBF3E" stroke-width="1.6">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3>Seasonal<br>Tidy-Ups</h3>
+      <p>Spring and autumn garden tidy-ups: pruning, planting, clearing debris, and preparing your garden for the season ahead.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="about-grid">
+
+    <div class="fade-up">
+      <div class="section-label">Who We Are</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.75rem);color:var(--dark);letter-spacing:-0.02em;line-height:1.15;margin-bottom:1.5rem;">
+        Belfast's Most Trusted<br>Garden Specialists
+      </h2>
+      <p style="color:#4a5568;font-size:1rem;line-height:1.8;margin-bottom:1.25rem;">
+        DMC Gardening &amp; Maintenance has been serving Belfast and surrounding areas for over 20 years. Founded by Dee, our business has built its reputation on reliability, quality workmanship, and genuine care for every garden we touch.
+      </p>
+      <p style="color:#4a5568;font-size:1rem;line-height:1.8;margin-bottom:2rem;">
+        Whether it's a weekly lawn cut or a complete garden transformation, we bring the same level of dedication to every job — no matter the size.
+      </p>
+
+      <div class="check-list">
+        <div class="check-item">
+          <div class="check-icon">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div>
+            <div class="check-title">Always Reliable</div>
+            <div class="check-desc">We show up when we say we will — every time, without exception.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div>
+            <div class="check-title">Exceptional Results</div>
+            <div class="check-desc">Meticulous attention to detail and a clean, tidy finish on every job.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div>
+            <div class="check-title">Great Value</div>
+            <div class="check-desc">Competitive, transparent pricing with no hidden costs or surprises.</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5"><path d="M2 6l3 3 5-5"/></svg>
+          </div>
+          <div>
+            <div class="check-title">Fully Insured</div>
+            <div class="check-desc">Full insurance coverage for your complete peace of mind.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-strip">
+        <img src="brand_assets/dmclogo.jpg" alt="DMC Logo" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid rgba(107,191,62,0.35);flex-shrink:0;">
+        <div>
+          <div style="color:rgba(255,255,255,0.85);font-style:italic;font-size:0.9rem;line-height:1.5;">"Reliable. Professional. Local."</div>
+          <div style="color:var(--bright);font-size:0.78rem;font-weight:700;margin-top:4px;">— Dee, DMC Gardening &amp; Maintenance</div>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+    </div>
+
+    <div class="about-imgs fade-up delay-2">
+      <div class="about-img-main">
+        <img src="brand_assets/dmcgarden.jpg" alt="Beautiful Belfast garden maintained by DMC">
+        <div class="about-img-overlay"></div>
+        <div class="years-badge">
+          <div class="num">20+</div>
+          <div class="lbl">Years Experience</div>
+        </div>
+      </div>
+      <div class="about-img-second" style="margin-top:1.75rem;">
+        <img src="brand_assets/dmcvans.jpg" alt="DMC Gardening fleet">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== AREAS BANNER ===== -->
+<div class="areas-banner">
+  <div class="areas-inner">
+    <div class="areas-text">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span style="color:white;font-weight:700;font-size:1rem;">Areas We Cover:</span>
+      <span style="color:rgba(255,255,255,0.9);font-size:0.92rem;">Belfast · Lisburn · Holywood · Crawfordsburn · Castlereagh &amp; surrounding areas</span>
+    </div>
+    <a href="tel:+447708379804" class="areas-btn">📞 +44 7708 379804</a>
+  </div>
+</div>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <div class="gallery-header">
+    <div class="section-label" style="justify-content:center;">Our Work</div>
+    <h2 style="color:var(--dark);font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:-0.02em;">Recent Projects</h2>
+    <div class="divider center"></div>
+  </div>
+
+  <div class="gallery-grid" style="max-width:1280px;margin:0 auto;">
+    <div class="gallery-item tall fade-up">
+      <img src="brand_assets/dmctilingnice.jpg" alt="Paving and tiling Belfast">
+      <div class="caption">Paving &amp; Tiling</div>
+    </div>
+    <div class="gallery-item fade-up delay-1">
+      <img src="brand_assets/dmcnicegrass.jpg" alt="Lawn striping">
+      <div class="caption">Lawn Striping &amp; Edging</div>
+    </div>
+    <div class="gallery-item fade-up delay-2">
+      <img src="brand_assets/dmccutgrass.jpg" alt="Grass cutting">
+      <div class="caption">Grass Cutting</div>
+    </div>
+    <div class="gallery-item fade-up delay-3">
+      <img src="brand_assets/dmctiles.jpg" alt="Paving and tiling">
+      <div class="caption">Paving &amp; Hard Landscaping</div>
+    </div>
+    <div class="gallery-item fade-up delay-4">
+      <img src="brand_assets/dmcnicegarden.jpg" alt="Garden maintenance Belfast">
+      <div class="caption">Garden Maintenance</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section id="transformations">
+  <div class="ba-header fade-up">
+    <div class="section-label" style="justify-content:center;">Real Results</div>
+    <h2 style="color:white;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:-0.02em;">Before &amp; After Transformations</h2>
+    <div class="divider center" style="background:var(--orange);"></div>
+    <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;max-width:560px;margin:1.25rem auto 0;">Drag the handle to reveal the transformation. See the difference DMC Gardening makes.</p>
+  </div>
+
+  <div class="ba-grid">
+
+    <!-- Slider 1 -->
+    <div class="ba-item fade-up" id="ba1">
+      <img class="ba-before" src="brand_assets/dmcbefore1.jpg" alt="Before — border edging">
+      <img class="ba-after" src="brand_assets/dmcafter1.jpg" alt="After — border edging">
+      <div class="ba-divider" id="ba1-div">
+        <div class="ba-handle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2.5">
+            <path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>
+          </svg>
+        </div>
+      </div>
+      <span class="ba-label after-lbl">After</span>
+      <span class="ba-label before-lbl">Before</span>
+      <div class="ba-drag-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M15 7l5 5-5 5"/></svg>
+        Drag to reveal
+      </div>
+    </div>
+
+    <!-- Slider 2 -->
+    <div class="ba-item fade-up delay-1" id="ba2">
+      <img class="ba-before" src="brand_assets/dmcbefore2.jpg" alt="Before — garden clearance">
+      <img class="ba-after" src="brand_assets/dmcafter2.jpg" alt="After — garden clearance">
+      <div class="ba-divider" id="ba2-div">
+        <div class="ba-handle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2.5">
+            <path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>
+          </svg>
+        </div>
+      </div>
+      <span class="ba-label after-lbl">After</span>
+      <span class="ba-label before-lbl">Before</span>
+      <div class="ba-drag-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M15 7l5 5-5 5"/></svg>
+        Drag to reveal
+      </div>
+    </div>
+
+    <!-- Slider 3 -->
+    <div class="ba-item fade-up delay-2" id="ba3">
+      <img class="ba-before" src="brand_assets/dmcbefore3.jpg" alt="Before — driveway clearing">
+      <img class="ba-after" src="brand_assets/dmcafter3.jpg" alt="After — driveway clearing">
+      <div class="ba-divider" id="ba3-div">
+        <div class="ba-handle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2.5">
+            <path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>
+          </svg>
+        </div>
+      </div>
+      <span class="ba-label after-lbl">After</span>
+      <span class="ba-label before-lbl">Before</span>
+      <div class="ba-drag-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M15 7l5 5-5 5"/></svg>
+        Drag to reveal
+      </div>
+    </div>
+
+    <!-- Slider 4 -->
+    <div class="ba-item fade-up delay-3" id="ba4">
+      <img class="ba-before" src="brand_assets/dmcbefore4.jpg" alt="Before — border tidying">
+      <img class="ba-after" src="brand_assets/dmcafter4.jpg" alt="After — border tidying">
+      <div class="ba-divider" id="ba4-div">
+        <div class="ba-handle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2.5">
+            <path d="M9 18l-6-6 6-6M15 6l6 6-6 6"/>
+          </svg>
+        </div>
+      </div>
+      <span class="ba-label after-lbl">After</span>
+      <span class="ba-label before-lbl">Before</span>
+      <div class="ba-drag-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M15 7l5 5-5 5"/></svg>
+        Drag to reveal
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="reviews-header">
+    <div class="section-label" style="justify-content:center;">Testimonials</div>
+    <h2 style="color:var(--dark);font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:-0.02em;">What Our Customers Say</h2>
+    <div class="divider center"></div>
+    <div class="rating-pill">
+      <div class="rating-big">5.0</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="rating-meta">20+ Google Reviews · 10+ Facebook Reviews</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Been a customer of DMC Gardening for over 7 years — brilliant services provided every time. No job too big or small and always very reliable. Highly recommend to anyone needing any sort of garden services."</p>
+      <div class="review-author">
+        <div class="author-avatar">K</div>
+        <div><div class="author-name">Kerri Bittles</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up delay-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Dee has been cutting my grass for close to 10 years now. Great value for money, tidy, efficient and reliable. I have no hesitation recommending him to anyone looking for a gardener. He's also put up fencing and again great pricing."</p>
+      <div class="review-author">
+        <div class="author-avatar">R</div>
+        <div><div class="author-name">Roisin McGarry</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up delay-2">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Dee has been cutting my tall hedges for quite a few years now and does a great job. He's efficient too and tidies up afterwards. Lovely bloke, very helpful. I highly recommend him."</p>
+      <div class="review-author">
+        <div class="author-avatar">A</div>
+        <div><div class="author-name">Averill Buchanan</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Dee has been maintaining the gardens of our small development for nearly 3 years — cleaning pavers, weeding, tidying shrubs and an annual hedge cut. His work is completed in an exemplary and professional way. Would recommend without hesitation."</p>
+      <div class="review-author">
+        <div class="author-avatar">H</div>
+        <div><div class="author-name">Helen McVitty-O'Hara</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up delay-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Dee has been looking after my garden for several years. He cuts the lawn and does a general tidy up every few weeks, along with major pruning twice a year. His service has been consistently excellent."</p>
+      <div class="review-author">
+        <div class="author-avatar">V</div>
+        <div><div class="author-name">Valerie Agnew</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up delay-2">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Dee has been doing my garden for years and keeps it perfect. Keeps everywhere tidy. Really reasonable. Highly recommended."</p>
+      <div class="review-author">
+        <div class="author-avatar">M</div>
+        <div><div class="author-name">Maura Gillespie</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"DMC have done me and my Father's garden for years. They're an absolute pleasure to work with and always make the garden beautiful. So grateful for them!"</p>
+      <div class="review-author">
+        <div class="author-avatar">M</div>
+        <div><div class="author-name">Mary</div><div class="author-source">Google Review · 6 Photos</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up delay-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Dee has been doing my garden for a number of years. Totally reliable, great value for money, and most importantly he does a superb job. Would highly recommend Dee."</p>
+      <div class="review-author">
+        <div class="author-avatar">J</div>
+        <div><div class="author-name">Jason Carlisle</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up delay-2">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Dee has been cutting mine and also my parent gardens for around 9 years now and when I say he's reliable I mean that. He never fails to turn up and always does a top class job. I would 100% recommend DMC Gardening."</p>
+      <div class="review-author">
+        <div class="author-avatar">P</div>
+        <div><div class="author-name">Pauline Harrison</div><div class="author-source">Google Review</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-inner fade-up">
+    <div class="section-label" style="justify-content:center;color:var(--bright);">Limited Availability</div>
+    <h2 style="color:white;font-size:clamp(1.8rem,4vw,2.75rem);letter-spacing:-0.02em;margin:0.75rem 0 1rem;">Ready to Transform Your Garden?</h2>
+    <p style="color:rgba(255,255,255,0.72);font-size:1.05rem;line-height:1.75;margin-bottom:2.5rem;">We currently have limited slots available. Get in touch today to book and keep your garden looking its best all year round.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:+447708379804" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Call +44 7708 379804
+      </a>
+      <a href="#contact" class="btn-outline">Send Us a Message</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="contact-grid">
+
+    <div class="fade-up">
+      <div class="section-label">Get In Touch</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--dark);letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem;">Let's Talk About<br>Your Garden</h2>
+      <p style="color:#6b7280;font-size:1rem;line-height:1.75;margin-bottom:2.25rem;">Get in touch for a free, no-obligation quote. We cover all areas of Belfast, Lisburn and surrounds.</p>
+
+      <div class="contact-info-list">
+        <a href="tel:+447708379804" class="contact-info-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div><div class="contact-label">Call Us</div><div class="contact-value">+44 7708 379804</div></div>
+        </a>
+
+        <a href="mailto:dmcgardening@hotmail.com" class="contact-info-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div><div class="contact-label">Email Us</div><div class="contact-value">dmcgardening@hotmail.com</div></div>
+        </a>
+
+        <div class="contact-info-item" style="cursor:default;">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div class="contact-label">Address</div><div class="contact-value">3 Sandyhill Ave, Dunmurry, Belfast BT17 9LT</div></div>
+        </div>
+
+        <a href="https://wa.me/447708379804" class="contact-info-item" target="_blank" rel="noopener">
+          <div class="contact-icon green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div><div class="contact-label">WhatsApp</div><div class="contact-value">Message Us on WhatsApp</div></div>
+        </a>
+
+        <a href="https://www.facebook.com/DMCGardeningni/" target="_blank" rel="noopener" class="contact-info-item">
+          <div class="contact-icon blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </div>
+          <div><div class="contact-label">Facebook</div><div class="contact-value">DMC Gardening &amp; Maintenance</div></div>
+        </a>
+
+        <a href="https://www.instagram.com/dmcgardening" target="_blank" rel="noopener" class="contact-info-item">
+          <div class="contact-icon instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div><div class="contact-label">Instagram</div><div class="contact-value">@dmcgardening</div></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-img-wrap fade-up delay-2" style="background:var(--dark);display:flex;align-items:center;justify-content:center;">
+      <img src="brand_assets/dmclogo.jpg" alt="DMC Gardening &amp; Maintenance" style="width:260px;height:260px;border-radius:50%;object-fit:cover;border:6px solid rgba(107,191,62,0.35);box-shadow:0 0 80px rgba(107,191,62,0.15);">
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <a href="#" style="display:inline-flex;align-items:center;gap:12px;text-decoration:none;margin-bottom:1.25rem;">
+        <img src="brand_assets/dmclogo.jpg" alt="DMC" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid rgba(107,191,62,0.3);">
+        <div>
+          <div style="color:white;font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;line-height:1.2;">DMC Gardening</div>
+          <div style="color:var(--bright);font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;">&amp; Maintenance</div>
+        </div>
+      </a>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.875rem;line-height:1.75;max-width:280px;margin-bottom:1.5rem;">Professional gardening and maintenance across Belfast, Lisburn and surrounding areas. Over 20 years of trusted service.</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/DMCGardeningni/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/dmcgardening" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/447708379804" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-heading">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Grass Cutting</a></li>
+        <li><a href="#services">Hedge Cutting</a></li>
+        <li><a href="#services">Garden Clearance</a></li>
+        <li><a href="#services">Fencing &amp; Landscaping</a></li>
+        <li><a href="#services">Seasonal Tidy-Ups</a></li>
+        <li><a href="#services">Commercial Services</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-heading">Areas Covered</div>
+      <ul class="footer-links">
+        <li>Belfast</li>
+        <li>Lisburn</li>
+        <li>Holywood</li>
+        <li>Crawfordsburn</li>
+        <li>Castlereagh</li>
+        <li>Dunmurry</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li>
+          <a href="tel:+447708379804" style="display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            +44 7708 379804
+          </a>
+        </li>
+        <li>
+          <a href="mailto:dmcgardening@hotmail.com" style="display:flex;align-items:center;gap:6px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            dmcgardening@hotmail.com
+          </a>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:6px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0;"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          3 Sandyhill Ave, Dunmurry, Belfast BT17 9LT
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 DMC Gardening &amp; Maintenance. All rights reserved.</p>
+    <p>Belfast, Northern Ireland · <a href="https://www.facebook.com/DMCGardeningni/" style="color:rgba(255,255,255,0.35);text-decoration:none;" target="_blank">Facebook</a> · <a href="https://www.instagram.com/dmcgardening" style="color:rgba(255,255,255,0.35);text-decoration:none;" target="_blank">Instagram</a></p>
+  </div>
+</footer>
+
+<script>
+  /* ── MOBILE NAV ── */
+  function toggleNav() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) document.getElementById('mobile-menu').classList.remove('open');
+  });
+
+  /* ── HERO BG PAN ── */
+  window.addEventListener('load', () => {
+    document.getElementById('heroBg').classList.add('loaded');
+  });
+
+  /* ── SCROLL PROGRESS BAR ── */
+  const progressBar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (scrolled / total * 100) + '%';
+  }, { passive: true });
+
+  /* ── ACTIVE NAV ON SCROLL ── */
+  const navLinks = document.querySelectorAll('.nav-link[data-section]');
+  const sections = Array.from(navLinks).map(l => document.getElementById(l.dataset.section)).filter(Boolean);
+  const activateNav = () => {
+    const scrollMid = window.scrollY + window.innerHeight * 0.4;
+    let current = null;
+    sections.forEach(s => { if (s.offsetTop <= scrollMid) current = s; });
+    navLinks.forEach(l => {
+      l.classList.toggle('active', current && l.dataset.section === current.id);
+    });
+  };
+  window.addEventListener('scroll', activateNav, { passive: true });
+  activateNav();
+
+  /* ── SCROLL FADE-UP OBSERVER ── */
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+  /* ── HERO STATS COUNTER ── */
+  const countTargets = [
+    { el: document.querySelector('.stat-item:nth-child(1) .stat-num'), end: 20, suffix: '+', dur: 1200 },
+    { el: document.querySelector('.stat-item:nth-child(3) .stat-num'), end: 100, suffix: '%', dur: 1400 },
+  ];
+  const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      countObserver.unobserve(entry.target);
+      countTargets.forEach(({ el, end, suffix, dur }) => {
+        if (!entry.target.contains(el) && entry.target !== el?.closest('.hero-stats')) return;
+        const start = performance.now();
+        const tick = now => {
+          const p = Math.min((now - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(ease * end) + suffix;
+          el.closest('.stat-item').classList.add('counted');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    });
+  }, { threshold: 0.6 });
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) countObserver.observe(heroStats);
+
+  /* ── RIPPLE EFFECT ── */
+  document.querySelectorAll('.ripple-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const r = document.createElement('span');
+      r.className = 'ripple';
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+      btn.appendChild(r);
+      r.addEventListener('animationend', () => r.remove());
+    });
+  });
+
+  /* ── REVIEW CARD 3D TILT ── */
+  document.querySelectorAll('.review-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `perspective(600px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  /* ── FORM SUBMIT ── */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.innerHTML = '✓ Message Sent!';
+    btn.style.background = '#2D6A4F';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = 'Send Message <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3500);
+  }
+
+  /* ── BEFORE / AFTER SLIDERS ── */
+  function initSliders() {
+    document.querySelectorAll('.ba-item').forEach(item => {
+      const afterImg  = item.querySelector('.ba-after');
+      const divider   = item.querySelector('.ba-divider');
+      let pos = 50;
+      let dragging = false;
+      let hinted = false;
+
+      function setPos(pct, animate) {
+        pos = Math.max(2, Math.min(98, pct));
+        if (animate) {
+          afterImg.style.transition = 'clip-path 0.65s cubic-bezier(0.25,0.46,0.45,0.94)';
+          divider.style.transition  = 'left 0.65s cubic-bezier(0.25,0.46,0.45,0.94)';
+        } else {
+          afterImg.style.transition = 'clip-path 0s';
+          divider.style.transition  = 'left 0s';
+        }
+        afterImg.style.clipPath = `inset(0 0 0 ${pos}%)`;
+        divider.style.left = pos + '%';
+      }
+
+      function clientX(e) {
+        return e.touches ? e.touches[0].clientX : e.clientX;
+      }
+
+      function getPct(cx) {
+        const rect = item.getBoundingClientRect();
+        return ((cx - rect.left) / rect.width) * 100;
+      }
+
+      function startDrag(e) {
+        dragging = true;
+        hinted = true;
+        item.classList.add('dragging', 'interacted');
+        setPos(getPct(clientX(e)), false);
+        e.preventDefault();
+      }
+      function moveDrag(e) {
+        if (!dragging) return;
+        setPos(getPct(clientX(e)), false);
+      }
+      function endDrag() {
+        dragging = false;
+        item.classList.remove('dragging');
+      }
+
+      item.addEventListener('mousedown',  startDrag);
+      item.addEventListener('touchstart', startDrag, { passive: false });
+      window.addEventListener('mousemove',  moveDrag);
+      window.addEventListener('touchmove',  moveDrag, { passive: true });
+      window.addEventListener('mouseup',  endDrag);
+      window.addEventListener('touchend', endDrag);
+
+      // Set initial clip
+      setPos(50, false);
+
+      // Auto-hint sweep when scrolled into view
+      const hintObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting || hinted) return;
+          hintObs.unobserve(item);
+          // Stagger per item index so they don't all sweep at once
+          const idx = Array.from(document.querySelectorAll('.ba-item')).indexOf(item);
+          setTimeout(() => {
+            if (hinted) return;
+            setPos(70, true);
+            setTimeout(() => setPos(28, true), 750);
+            setTimeout(() => setPos(50, true), 1500);
+          }, idx * 180 + 300);
+        });
+      }, { threshold: 0.35 });
+      hintObs.observe(item);
+    });
+  }
+  initSliders();
+</script>
+
+</body>
+</html>
