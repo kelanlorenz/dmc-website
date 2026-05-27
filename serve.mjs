@@ -49,6 +49,7 @@ const SECURITY_HEADERS = {
     "font-src   'self' https://fonts.gstatic.com",
     "img-src    'self' data: blob:",
     "connect-src 'self'",
+    "frame-src https://maps.google.com https://www.google.com",
     "frame-ancestors 'self'",
   ].join('; '),
 };

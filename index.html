@@ -5,6 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DMC Gardening &amp; Maintenance | Belfast &amp; Lisburn</title>
   <link rel="icon" type="image/jpeg" href="brand_assets/dmclogo.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DMC Gardening & Maintenance",
+    "image": "https://kelanlorenz.github.io/dmc-website/brand_assets/dmclogo.jpg",
+    "url": "https://kelanlorenz.github.io/dmc-website/",
+    "telephone": "+447708379804",
+    "email": "dmcgardening@hotmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3 Sandyhill Ave",
+      "addressLocality": "Dunmurry, Belfast",
+      "postalCode": "BT17 9LT",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 54.5469,
+      "longitude": -6.0235
+    },
+    "areaServed": ["Belfast", "Lisburn", "Dunmurry", "Holywood", "Crawfordsburn", "Castlereagh"],
+    "description": "Professional gardening and maintenance services across Belfast, Lisburn and surrounding areas. Over 20 years experience.",
+    "priceRange": "££",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:50", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "16:00" }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/DMCGardeningni/",
+      "https://www.instagram.com/dmcgardening"
+    ]
+  }
+  </script>
   <link rel="apple-touch-icon" href="brand_assets/dmclogo.jpg">
   <meta name="description" content="Professional gardening and maintenance services across Belfast, Lisburn and surrounding areas. Over 20 years experience. Grass cutting, hedge trimming, garden clearance and more.">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -859,6 +893,75 @@
     .contact-img-wrap:not(.no-overlay)::after {
       content: none;
     }
+
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-map {
+      border-radius: 14px;
+      overflow: hidden;
+      flex: 1;
+      min-height: 300px;
+      box-shadow: 0 8px 32px rgba(27,58,45,0.12);
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      display: block;
+      border: none;
+    }
+
+    .hours-card {
+      background: var(--dark);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+    }
+
+    .hours-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem 1.5rem;
+    }
+
+    .hours-row {
+      display: contents;
+    }
+
+    .hours-day {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .hours-time {
+      font-size: 0.85rem;
+      color: white;
+      font-weight: 600;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .hours-time.closed { color: rgba(255,255,255,0.35); }
+    .hours-time.today  { color: var(--bright); }
 
     .contact-info-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
 
@@ -1938,8 +2041,34 @@
       </div>
     </div>
 
-    <div class="contact-img-wrap fade-up delay-2" style="background:var(--dark);display:flex;align-items:center;justify-content:center;">
-      <img src="brand_assets/dmclogo.jpg" alt="DMC Gardening &amp; Maintenance" style="width:260px;height:260px;border-radius:50%;object-fit:cover;border:6px solid rgba(107,191,62,0.35);box-shadow:0 0 80px rgba(107,191,62,0.15);animation:logoPulse 3.5s ease-in-out infinite;">
+    <div class="contact-right fade-up delay-2">
+
+      <div class="contact-map">
+        <iframe
+          src="https://maps.google.com/maps?q=3+Sandyhill+Ave,+Dunmurry,+Belfast+BT17+9LT&output=embed&z=15"
+          title="DMC Gardening &amp; Maintenance location"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="hours-card">
+        <div class="hours-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Opening Hours
+        </div>
+        <div class="hours-grid">
+          <span class="hours-day">Monday</span>   <span class="hours-time">7:50 am – 6 pm</span>
+          <span class="hours-day">Tuesday</span>  <span class="hours-time">7:50 am – 6 pm</span>
+          <span class="hours-day">Wednesday</span><span class="hours-time">7:50 am – 6 pm</span>
+          <span class="hours-day">Thursday</span> <span class="hours-time">7:50 am – 6 pm</span>
+          <span class="hours-day">Friday</span>   <span class="hours-time">7:50 am – 6 pm</span>
+          <span class="hours-day">Saturday</span> <span class="hours-time">8 am – 4 pm</span>
+          <span class="hours-day">Sunday</span>   <span class="hours-time closed">Closed</span>
+        </div>
+      </div>
+
       <style>
         @keyframes logoPulse {
           0%, 100% { transform: scale(1); }
