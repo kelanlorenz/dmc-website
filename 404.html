@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | DMC Gardening &amp; Maintenance</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/jpeg" href="brand_assets/dmclogo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Satisfy&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:   #1B3A2D;
+      --mid:    #2D6A4F;
+      --bright: #6BBF3E;
+      --orange: #E87722;
+      --cream:  #F7F4EF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Background grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Radial glow blobs */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 80%, rgba(107,191,62,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 85% 20%, rgba(232,119,34,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 560px;
+    }
+
+    /* Logo */
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(107,191,62,0.35);
+      box-shadow: 0 0 40px rgba(107,191,62,0.15);
+      margin-bottom: 2rem;
+      animation: pulse 3.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.05); }
+    }
+
+    /* 404 number */
+    .four-oh-four {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(6rem, 18vw, 10rem);
+      font-weight: 700;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(107,191,62,0.35);
+      letter-spacing: -0.04em;
+      margin-bottom: 0.25rem;
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s both;
+    }
+
+    .script {
+      font-family: 'Satisfy', cursive;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: #B8F56A;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4), 0 0 30px rgba(184,245,106,0.45), 0 0 70px rgba(184,245,106,0.2);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s both;
+    }
+
+    .message {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.5s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--orange);
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(232,119,34,0.35);
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.65s both;
+    }
+
+    .btn:hover {
+      background: #d4691a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232,119,34,0.45);
+    }
+
+    .btn:active { transform: translateY(0); }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--orange);
+      margin: 0 auto 1.25rem;
+      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer link */
+    .footer-link {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .footer-link:hover { color: rgba(255,255,255,0.5); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="brand_assets/dmclogo.jpg" alt="DMC Gardening" class="logo">
+    <div class="four-oh-four">404</div>
+    <div class="divider"></div>
+    <div class="script">Lost in the garden…</div>
+    <p class="message">The page you're looking for has been pruned, moved, or never existed. Let's get you back on the right path.</p>
+    <a href="index.html" class="btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Back to Homepage
+    </a>
+  </div>
+
+  <a href="index.html" class="footer-link">DMC Gardening &amp; Maintenance · Belfast</a>
+
+</body>
+</html>

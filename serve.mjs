@@ -118,7 +118,13 @@ const server = http.createServer((req, res) => {
   const contentType = MIME[ext] ?? 'application/octet-stream';
 
   fs.readFile(filePath, (err, data) => {
-    if (err) return send(res, 404, 'Not Found');
+    if (err) {
+      // Serve the branded 404 page for any missing file.
+      return fs.readFile(path.join(__dirname, '404.html'), (e, page) => {
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', ...SECURITY_HEADERS });
+        res.end(e ? 'Not Found' : page);
+      });
+    }
     res.writeHead(200, { 'Content-Type': contentType, ...SECURITY_HEADERS });
     res.end(req.method === 'HEAD' ? undefined : data);
   });
